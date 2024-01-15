@@ -1,6 +1,7 @@
 var router = require('express').Router();
 const { requiresAuth } = require('express-openid-connect');
 
+// Auth
 router.get('/', function (req, res, next) {
   res.render('index', {
     title: 'Auth0 Webapp sample Nodejs',
@@ -14,5 +15,6 @@ router.get('/profile', requiresAuth(), function (req, res, next) {
     title: 'Profile page'
   });
 });
+
 
 module.exports = router;
